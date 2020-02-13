@@ -17,6 +17,9 @@ $Bias^2=(E[\hat{f}(x)]-f(x))^2$
 The formula for variance is given as 
 \newline
 $Variance=E[\hat{f}(x)-E[\hat{f}(x)])^2]$
+\newline \newline
+The above formulae are for single input. However, siince we used 10 training set in Q1 and 20 in Q2, and found the bias and variance individually, the final plot was calculated using the avergae over the total number of partitions of the training data.
+
 \section{Q1}
 \subsection{Bias and Variance table for Polynomial Fit}
 
@@ -171,9 +174,12 @@ From the above observations, we can see that the test data is very noisy compare
 \subsubsection{Plot of Training Data}
 \includegraphics[scale=.9]{images/train-2.png}
 
+We see that a three degree fit is the best fit for the training data.
+
+
 \subsubsection{Plot of Test Data}
 \includegraphics[scale=.9]{images/test-2.png}
 
-
+We see that the test data is very noisy compared to the training data, which explains the high bias and variance.
 
 \end{document}
