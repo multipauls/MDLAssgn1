@@ -2,9 +2,21 @@
 \usepackage {graphicx}
 \begin{document}
 \title{Machine, Data and Learning: Assignment 1}
-\author{Shubhangi Dutta (2018113004), Rishav Kundu (2019121007)}
+\author{Shubhangi Dutta (2018113004), Rishav Kundu(2019121007)}
 \maketitle
 \newpage
+\section{Bias and Variance}
+The formula for bias is given as 
+\newline
+$Bias=(E[\hat{f}(x)]-f(x))$
+\newline 
+Therefore, 
+\newline
+$Bias^2=(E[\hat{f}(x)]-f(x))^2$
+\newline
+The formula for variance is given as 
+\newline
+$Variance=E[\hat{f}(x)-E[\hat{f}(x)])^2]$
 \section{Q1}
 \subsection{Bias and Variance table for Polynomial Fit}
 
@@ -82,19 +94,21 @@ Degree & Bias & Variance \\
 \subsubsection{Observations and Analysis}
 \begin{itemize}
 \item Both bias and variance are very large for the linear fit. The model is underfit and performs poorly for the given data.
-\item For higher degrees ($>$ 1, $<$ 6), both bias and variance decrease. The models are better fit to the data points, so both decrease.
-\item Variance increases again for even higher degree polynomials (>6) but it is not significant compared to the drop between degree  1 and 2. The model is overfitting, and hence is not a good fit for the test data and is accounting for small deviations, making variance high.
+\item For higher degrees ($>$1, $<$ 6), both bias and variance decrease. The models are better fit to the data points, so both decrease.
+\item Variance increases again for even higher degree polynomials ($>$6) but it is not significant compared to the drop between degree  1 and 2. The model is overfitting, and hence is not a good fit for the test data and is accounting for small deviations, making variance high.
 \end{itemize}
 \subsection{Bias-Variance Vs Degree Plot for Polynomials Degree 2-9}
+We remove the first point to better view the changes between the other degrees.
 \includegraphics[scale=.9]{images/2-9.png}
 \subsubsection{Observations and Analysis}
 \begin{itemize}
 \item Bias is high but variance is low for the degree 2 fit. The model is underfit and performs poorly for the test data.
 \item For higher degrees ($>$ 2, $<$ 5), both bias and variance decrease. The models are better fit to the data points, so both decrease.
 \item The intersection point is at the 5 degree polynomial. Both bias and variance are low and this is optimal fit.
-\item Variance increases again for even higher degree polynomials (>6) and it is significant compared to the drop in bias. The model is overfitting, and hence is not a good fit for the test data and is accounting for small deviations, making variance high.
+\item Variance increases again for even higher degree polynomials ($>$6) and it is significant compared to the drop in bias. The model is overfitting, and hence is not a good fit for the test data and is accounting for small deviations, making variance high.
 \end{itemize}
 \subsection{Bias-Variance Vs Degree Plot for Polynomials Degree 1-30}
+We increase the degree of the polynomial to get a wider view of the data.
 \includegraphics[scale=.9]{images/1-30.png}
 \subsubsection{Observations and Analysis}
 \begin{itemize}
@@ -107,6 +121,59 @@ Degree & Bias & Variance \\
 
 \section{Q2}
 \subsection{Bias and Variance table for Polynomial Fit}
+\begin{center}
+\begin{tabular}{ | c | c | c | }
+\hline
+Degree & Bias & Variance \\ 
+\hline \hline
+1 & 3996913.587487695 & 70545.48914575046 \\
+\hline 
+2 & 3818477.0951777 & 125870.85554877334 \\
+\hline
+3 & 37558.9204671648 & 150073.7395464768 \\
+\hline
+4 & 43629.39253628525 & 212235.70832526154 \\
+\hline
+5 & 37356.777165304076 & 276388.48025474057 \\
+\hline
+6 & 40994.34376459151 & 316863.49843748985 \\
+\hline
+7 & 41341.10344659638 & 357510.98475735466 \\
+\hline
+8 & 40597.676975749106 & 404286.670685786 \\
+\hline
+9 & 43261.94814629698 & 459132.37837248633 \\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Bias-Variance Vs Degree Plot for Polynomials Degree 1-9}
+\subsubsection{Plot}
+\includegraphics[scale=.9]{images/1-9-2.png}
+\subsubsection{Observations and Analysis}
+\begin{itemize}
+\item Both bias and variance are very large for the linear fit. The model is underfit and performs poorly for the given data.
+\item For higher degrees ($>$1, $<$3), both bias and variance decrease. The models are better fit to the data points, so both decrease.
+\item Variance increases again for even higher degree polynomials ($>$3) but it is not significant compared to the drop between degree  1 and 2. The model is overfitting, and hence is not a good fit for the test data and is accounting for small deviations, making variance high.
+\end{itemize}
+\subsection{Bias-Variance Vs Degree Plot for Polynomials Degree 3-9}
+We remove the first point to better view the changes between the other degrees.
+\subsubsection{Plot}
+\includegraphics[scale=.9]{images/3-9.png}
+\subsubsection{Observations and Analysis}
+\begin{itemize}
+\item Both bias and variance are very low for the 3 degree fit. The model is a better fit for the data.
+\item For higher degrees ($>$3), both bias and variance increase. The training data has a lot of noise, hence they increase the bias and the variance both.
+\item Variance increases again for even higher degree polynomials ($>$6). The model is overfitting, and hence is not a good fit for the test data and is accounting for small deviations, making variance high.
+\end{itemize}
+\subsection{Analysis of Data given}
+From the above observations, we can see that the test data is very noisy compared to the training data. Hence the bias and variance are both high at the linear fit, and then reach a minimum at the degree 3. The higher degree models try to acount for the noise and both bias and variance become higher.
+
+\subsubsection{Plot of Training Data}
+\includegraphics[scale=.9]{images/train-2.png}
+
+\subsubsection{Plot of Test Data}
+\includegraphics[scale=.9]{images/test-2.png}
+
 
 
 \end{document}
