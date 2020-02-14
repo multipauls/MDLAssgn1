@@ -2,24 +2,25 @@
 \usepackage {graphicx}
 \begin{document}
 \title{Machine, Data and Learning: Assignment 1}
-\author{Shubhangi Dutta (2018113004), Rishav Kundu(2019121007)}
+\author{Shubhangi Dutta (2018113004), Rishav Kundu (2019121007)}
 \maketitle
 \newpage
 \section{Bias and Variance}
 The formula for bias is given as 
 \newline
-$Bias=(E[\hat{f}(x)]-f(x))$
+$$Bias=(E[\hat{f}(x)]-f(x))$$
 \newline 
 Therefore, 
 \newline
-$Bias^2=(E[\hat{f}(x)]-f(x))^2$
+$$
+Bias^2=(E[\hat{f}(x)]-f(x))^2
+$$
 \newline
 The formula for variance is given as 
-\newline
-$Variance=E[\hat{f}(x)-E[\hat{f}(x)])^2]$
-\newline \newline
-The above formulae are for single input. However, siince we used 10 training set in Q1 and 20 in Q2, and found the bias and variance individually, the final plot was calculated using the avergae over the total number of partitions of the training data.
-
+$$
+Variance=E[\hat{f}(x)-E[\hat{f}(x)])^2]
+$$
+The above formulas are defined for a single value of $x$. Hence, the expectation $E[\hat{f}(x)]$ is defined over the different values of $\hat{f}(x)$ obtained by training the same model on different training set partitions.
 \section{Q1}
 \subsection{Bias and Variance table for Polynomial Fit}
 
